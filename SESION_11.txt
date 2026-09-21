@@ -1,0 +1,31 @@
+SESIÓN 11 - PERCEPTRÓN | TALLER DE LABORATORIO: HACKEANDO LOS PESOS
+(Código en SESION_11.py)
+
+Paso 2: verificación de la compuerta AND (pesos = [0.5, 0.5], sesgo = -0.8)
+  [1, 0] -> Z = -0.3 -> 0
+  [0, 1] -> Z = -0.3 -> 0
+  [0, 0] -> Z = -0.8 -> 0
+  [1, 1] -> Z =  0.2 -> 1
+  Las tres primeras arrojan 0, como pedía la guía.
+
+Pasos 3 y 4: El reto - compuerta OR
+  Con pesos [0.5, 0.5], X·W vale 0 para [0,0], 0.5 para una sola entrada
+  encendida y 1.0 para [1,1]. Se necesita Z < 0 en el primer caso y Z >= 0
+  en los otros, es decir -0.5 <= b < 0. Se eligió b = -0.3.
+
+Paso 5: PESOS Y SESGO QUE RESUELVEN LA COMPUERTA OR
+
+     Pesos: W = [0.5, 0.5]
+     Sesgo: b = -0.3
+
+  Verificación:
+     [0, 0] -> Z = -0.3 -> 0
+     [0, 1] -> Z =  0.2 -> 1
+     [1, 0] -> Z =  0.2 -> 1
+     [1, 1] -> Z =  0.7 -> 1
+
+  Otras combinaciones válidas: W = [1, 1] con b = -0.5, o W = [0.5, 0.5]
+  con b = -0.4.
+
+  Esto es lo que en la próxima clase hará la red sola: ajustar sus pesos
+  (entrenar).
